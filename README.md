@@ -142,3 +142,47 @@ Modify our route to use controller instead closure function.
 Route::get('greeting', 'Samtarmizi\Greeting\Controllers\GreetingController@greeting');
 ```
 
+## Use view on controller
+
+### Creating view
+
+Create views/greeting.blade.php
+
+```
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Tarmizi Sanusi</title>
+        </head>
+        <body>
+        <h1 style="text-align:center">
+            <span style="font-weight:normal">This is greeting package</span>
+        </h1>
+        </body>
+        </html>
+```
+
+### Load into boot() method
+
+```
+    public function boot()
+    {
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadViewsFrom(__DIR__.'/views', 'Greeting');
+    }
+```
+
+Second argument inside loadViewsFrom() method is a namespace for your view. This is necessary since we need to differentiate views from other packages.
+
+### Calling view 
+
+in greeting() method inside controller
+
+```
+        public function greeting()
+        {
+            return view('Greeting::greeting');
+        }
+```
+
+`Greeting` is namespace and `greeting` is greeting.blade.php
