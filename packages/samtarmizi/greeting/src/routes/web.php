@@ -1,5 +1,3 @@
 <?php
 
-Route::get('greeting', function () {
-    return 'Hi, this is your awesome package!';
-});
+Route::get('greeting', 'Samtarmizi\Greeting\Controllers\GreetingController@greeting');
