@@ -114,3 +114,31 @@ Then we have to load our route into boot() method in service provider we’ve cr
 ```
 
 Navigate your browser to APP_URL/greeting. You should see “Hi, this is your awesome package!” as an output
+
+## Controller instead closure
+
+Placing our code directly into route file is not a best practice. Since we want to modular and separating concern, we could create controller file to do logic for our functionality.
+
+### Create Controller
+
+Create `GreetingController.php` then create a greeting() function
+
+### Register Controller
+
+Next, register our controller into package service provider.
+
+```
+        public function register()
+        {
+            $this->app->make('Samtarmizi\Greeting\Controllers\GreetingController');
+        }
+```
+
+### Use controller at route
+
+Modify our route to use controller instead closure function.
+
+```
+Route::get('greeting', 'Samtarmizi\Greeting\Controllers\GreetingController@greeting');
+```
+
