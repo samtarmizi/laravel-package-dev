@@ -11,6 +11,6 @@ class GreetingController extends Controller
      */
     public function greeting()
     {
-        return 'Hi, this is your awesome package!';
+        return view('Greeting::greeting');
     }
 }
