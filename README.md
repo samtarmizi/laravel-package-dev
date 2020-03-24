@@ -10,9 +10,9 @@
 
 create `packages/samtarmizi/greeting/src` folder on tarmizi-packages-dev's folder
 
-`cd packages/samtarmizi/greeting/src`
-
 ### Create Package Info
+
+`cd packages/samtarmizi/greeting`
 
 run `composer init`
 
