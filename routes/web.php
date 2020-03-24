@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Samtarmizi\Greeting\Greeting;
+
+Route::get('/greet/{name}', function($sName) {
+    $oGreetr = new Greeting();
+    return $oGreetr->greet($sName);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
