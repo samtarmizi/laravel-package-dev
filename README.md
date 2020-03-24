@@ -77,3 +77,40 @@ Run `composer dump-autoload`
                 return $oGreetr->greet($sName);
             });
 ```
+
+##  Service Provider
+
+### Create Service Provider
+
+Simply create a `GreetingServiceProvider.php` class inside src folder. Don’t forget to use namespace based on vendor that we’ve created before
+
+### Add Package Service Provider
+
+to `config/app.php`
+
+```
+        /*
+         * Package Service Providers...
+         */
+        Samtarmizi\Greeting\GreetingServiceProvider::class,
+```
+
+create a `routes/web.php` inside our package so we can access it using our browser
+
+```
+    <?php
+        Route::get('greeting', function () {
+            return 'Hi, this is your awesome package!';
+        });
+```
+
+Then we have to load our route into boot() method in service provider we’ve created before.
+
+```
+        public function boot()
+        {
+            $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        }
+```
+
+Navigate your browser to APP_URL/greeting. You should see “Hi, this is your awesome package!” as an output
