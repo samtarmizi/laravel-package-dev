@@ -8,13 +8,15 @@
 
 ## Create Package Structure
 
-        packages/samtarmizi/greeting/src folder
+create `packages/samtarmizi/greeting/src` folder on tarmizi-packages-dev's folder
 
-        cd packages/samtarmizi/greeting/src
+`cd packages/samtarmizi/greeting/src`
 
-        run `composer init`
+### Create Package Info
 
-        Package `composer.json`
+run `composer init`
+
+### Package `composer.json`
 
 ```
             {
@@ -32,7 +34,7 @@
             }
 ```
 
-        Project composer.json
+### Project `composer.json`
 
 ```
             "autoload": {
@@ -47,11 +49,11 @@
             },
 ```
 
-        Run `composer dump-autoload`
+Run `composer dump-autoload`
 
-        Create Class
+### Create Class
 
-        ```
+```
             <?php
 
             namespace Samtarmizi\Greeting;
@@ -62,11 +64,10 @@
                 {
                     return 'Hi ' . $sName . '! How are you doing today?';
                 }
-            }
-        ```
+```
 
 
-        TEST it using route at `web.php`
+### TEST it using route at `web.php`
 
 ```
             use Samtarmizi\Greeting\Greeting;
