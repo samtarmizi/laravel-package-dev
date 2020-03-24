@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Samtarmizi\Greeting\GreetingServiceProvider::class,
 
         /*
          * Application Service Providers...
