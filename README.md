@@ -123,17 +123,6 @@ Placing our code directly into route file is not a best practice. Since we want 
 
 Create `GreetingController.php` then create a greeting() function
 
-### Register Controller
-
-Next, register our controller into package service provider.
-
-```
-        public function register()
-        {
-            $this->app->make('Samtarmizi\Greeting\Controllers\GreetingController');
-        }
-```
-
 ### Use controller at route
 
 Modify our route to use controller instead closure function.
